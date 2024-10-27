@@ -15172,14 +15172,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p style=font-size:2.5em; font-weight: bold">Time, Optimal Play, Nudges and Mobility: A Study of Dynamic CPR Games</p>
-<p style="font-size: 1.5em; font-weight: bold">Dimitri Dubois</p>
+<h1 id="Common-Pool-Resources">Common Pool Resources<a class="anchor-link" href="#Common-Pool-Resources">&#182;</a></h1><p><strong>Dimitri Dubois</strong></p>
 <p><a href="https://www.duboishome.info/dimitri/cours/topics">https://www.duboishome.info/dimitri/cours/topics</a></p>
-<figure style="text-align: right">
-<img src="img/ceem.png" alt="CEE-M" style="height: 50px; display: inline-block; margin-right: 10px">
-<img src="img/cnrs.png" alt="CNRS" style="height: 50px; display: inline-block; margin-right: 10px">
-    <img src="img/um.png" alt="UM" style="height: 50px; display: inline-block; margin-right: 10px">
-</figure>
+<img src="img/logos/ceem.png" alt="CEE-M" style="height: 100px; display: inline-block; margin-right: 10px">
+<img src="img/logos/cnrs.png" alt="CNRS" style="height: 100px; display: inline-block; margin-right: 10px">
+<img src="img/logos/um.png" alt="UM" style="height: 100px; display: inline-block; margin-right: 10px">
 
 </div>
 </div>
@@ -15191,7 +15188,12 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1>Table of content</h1>
+<h2 id="Table-of-content">Table of content<a class="anchor-link" href="#Table-of-content">&#182;</a></h2><ol>
+<li><a href="#/2">Repeated Static CPR</a></li>
+<li><a href="#3">Dynamic CPR</a></li>
+<li><a href="#4">Dynamic CPR with Spatial Externalities</a></li>
+</ol>
+<p><img src="img/cpr_illustration.webp" alt="CPR" /></p>
 
 </div>
 </div>
@@ -15204,6 +15206,1493 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=315913bf-46ad-4ddf-aa02-f0f396ef6efb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+  <th><strong>Type of Good</strong></th>
+  <th><strong>Rivalry</strong></th>
+  <th><strong>Excludability</strong></th>
+  <th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Private Goods</strong></td>
+  <td>High</td>
+  <td>High</td>
+  <td>Food, clothing, personal devices</td>
+</tr>
+<tr>
+  <td><strong>Club Goods</strong></td>
+  <td>Low</td>
+  <td>High</td>
+  <td>Cinemas, private parks, toll roads</td>
+</tr>
+<tr>
+  <td><strong>Public Goods</strong></td>
+  <td>Low</td>
+  <td>Low</td>
+  <td>National defense, air, public parks</td>
+</tr>
+<tr>
+  <td><strong>Common Pool Resources (CPR)</strong></td>
+  <td>High</td>
+  <td>Low</td>
+  <td>Fisheries, groundwater, forests</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Private Goods</strong>: Both excludable and rival, meaning people can be excluded from using them, and one person's use diminishes availability for others.</li>
+<li><strong>Club Goods</strong>: Excludable but non-rival, allowing limited access without overuse issues.</li>
+<li><strong>Public Goods</strong>: Neither excludable nor rival, accessible to everyone without reducing availability.</li>
+<li><strong>Common Pool Resources</strong>: Non-excludable but rival, making them susceptible to overuse and depletion.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=e43f1d8a-7028-416b-9f20-214777b86445" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>CPRs are subject to the <strong>Tragedy of the Commons</strong> (Hardin 1968), that leads to over-extraction and depletion of the resource.</li>
+<li>This tragedy is not inevitable, as shown by <strong>Ostrom</strong>'s work on economic governance of the commons.</li>
+<li>Behavioral and experimental economists have also made contributions and found mechanisms that can help to mitigate the tragedy and reduce the over-exploitation, like :<ul>
+<li><strong>Communication</strong>: Allowing users to communicate can lead to more cooperative outcomes.</li>
+<li><strong>Sanctions</strong>: Implementing penalties for overuse can deter individuals from over-exploiting the resource.</li>
+<li><strong>Property rights</strong>: Assigning property rights to the resource can give individuals or groups an incentive to manage it sustainably.</li>
+<li><strong>Regulation</strong>: Government regulations or quotas can limit the use of the resource and prevent over-exploitation.</li>
+<li><strong>Nudges</strong>: Behavioral interventions, or &quot;nudges&quot;, can influence individuals' decisions and promote more sustainable use of the resource.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=10116bd6-d5b3-4c8c-ad59-a044a7d64760" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Repeated-Static-Common-Pool-Resource">Repeated Static Common Pool Resource<a class="anchor-link" href="#Repeated-Static-Common-Pool-Resource">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0c8075a3-6f4d-4539-8ef7-8581882f2c19" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Information-sharing">Information sharing<a class="anchor-link" href="#Information-sharing">&#182;</a></h2><p>Dubois, D., Farolfi, S., Rouchier, J. &amp; Nguyen Van, P., 2020. &quot;<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0240212">Contrasting effects of information sharing on CPR extraction behaviour: experimental findings</a>&quot;. Plos One 15 (10): e0241212.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=74226131-fa0e-4283-a758-5b44b5fae1f2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Social information</strong> -- the information available to participants about others' actions -- is crucial for common resource management.</li>
+<li>Most participants are <strong>conditional cooperators</strong> (Fischbacher et al. 2001), highlighting the potential influence of social information on cooperative behavior.</li>
+<li><strong>Aggregate information</strong> about group decisions has been shown to increase contributions in public goods games. Adding <strong>individual (anonymous) contributions</strong> can further boost cooperation (Sell &amp; Wilson, 1991).</li>
+<li>However, detailed information about others' actions can decrease cooperation, as it may reveal <strong>free riders</strong> within the group (Nikiforakis, 2010; Villena &amp; Zecchetto, 2010).</li>
+<li><strong>Mixed impact of social information</strong>: While some forms enhance cooperation, others can undermine it by exposing non-cooperative behavior.</li>
+<li><strong>Modern connected devices and social networks</strong> facilitate information exchange, enabling real-time sharing of consumption and resource extraction data.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=026290c2-5aa2-48e2-90b0-6bcd630c45e2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Research-question">Research question<a class="anchor-link" href="#Research-question">&#182;</a></h3><p><strong>Investigate the impact of social information through voluntary sharing mechanisms on cooperative behavior in common-pool resources.</strong></p>
+<p>Two Mechanisms of Information Sharing:</p>
+<ul>
+<li><strong>Voluntary Disclosure (VD)</strong>: Stakeholders choose whether to disclose their extraction level.</li>
+<li><strong>Free Disclosure (FD)</strong>: Stakeholders choose whether to disclose and <strong>can determine the extraction level they display</strong> (which may differ from the actual level).</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=261dde17-4acd-4c0f-9132-4ecd8fc09502" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="CPR-Game">CPR Game<a class="anchor-link" href="#CPR-Game">&#182;</a></h3><ul>
+<li>Each player $i$ in a group of $N=4$ participants can extract from $y_i = 0$ to $y_i =10$ tokens from a shared resource containing $40$ tokens.</li>
+<li>The payoff function for each player $i$ is defined as: $\pi_i(y_i, Y) = 3y_i - 0.01875 Y^2$, where $Y = \sum y_i$ is the total extraction by all players in the group.</li>
+<li>The dominant strategy for each player is to extract the maximum, $y_i = 10$, regardless of others' actions.</li>
+<li>The collective payoff is maximized when the total extraction $Y = 20$ tokens. Achieved by each player extracting exactly $5$ tokens, balancing individual and group benefits.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8e0b014a-c234-4366-9243-5d7fb5a2d5c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Experimental-Design">Experimental Design<a class="anchor-link" href="#Experimental-Design">&#182;</a></h3><ul>
+<li>CPR game played <strong>20 rounds</strong> in fixed <strong>groups of 4</strong> participants.</li>
+<li>3 treatments, following a between-subject design:<ul>
+<li><strong><em>Mandatory Disclosure (MD)</em></strong>: individual extractions are disclosed in an <strong>automatic and mandatory manner</strong></li>
+<li><strong><em>Voluntary Disclosure (VD)</em></strong>: after making their extraction decision, the players have to decide <strong>whether or not</strong> they wish to make this extraction decision public</li>
+<li><strong><em>Free Disclosure (FD)</em></strong>: after making their extraction decision, players have to decide <strong>whether or not</strong> they wish to make their extraction level public, as well as additionally <strong>deciding the amount of extraction they wish to publicize</strong></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>MD</th>
+  <th>VD</th>
+  <th>FD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Voluntary sharing</strong></td>
+  <td>No</td>
+  <td>Yes</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td><strong>Freedom to choose the value to be disclosed</strong></td>
+  <td>No</td>
+  <td>No</td>
+  <td>Yes</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=6327e9c9-0daa-4f80-b50e-a2179d9ae69d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Conjectures">Conjectures<a class="anchor-link" href="#Conjectures">&#182;</a></h3><p><strong>Conjecture 1</strong>: Individuals disclose extractions frequently due to:</p>
+<ul>
+<li>Desire to signal cooperation (warm-glow effect).</li>
+<li>Perception of a &quot;socially appropriate&quot; extraction level and descriptive norm.</li>
+</ul>
+<p><strong>Conjecture 2 (Voluntary Disclosure)</strong>:</p>
+<ol>
+<li><strong>Disclosed extractions</strong> &lt; <strong>Non-disclosed extractions</strong>.</li>
+<li><strong>Average extractions</strong> &lt; <strong>Mandatory Disclosure</strong>.<ul>
+<li>Non-cooperators avoid making extractions public to limit influence on others.</li>
+<li>Guilt or shame can deter non-prosocial behavior.</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=27486fe8-a7f1-4a8f-80f4-d5a343c89cb0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Conjecture 3 (Free Disclosure)</strong>:</p>
+<ol>
+<li><strong>Disclosed extractions</strong> &lt; <strong>Non-disclosed extractions</strong>.</li>
+<li><strong>Disclosed extractions</strong> &lt; <strong>Actual extractions</strong>.</li>
+<li><strong>Average extractions</strong> &lt; <strong>Mandatory Disclosure</strong>.<ul>
+<li>Cooperators likely to disclose accurate extractions; non-cooperators may hide actual values.</li>
+<li>Some may signal optimal extractions to set a group norm.</li>
+<li>Strategic false disclosures may erode trust, hindering norm formation and conditional cooperation.</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=731079f6-bc8b-4f9c-847e-ac98fd76be22" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3><h4 id="Average-extraction">Average extraction<a class="anchor-link" href="#Average-extraction">&#182;</a></h4><p><img src="img/info_sharing/extraction_evolution.png" alt="Extraction evolution" /></p>
+<ul>
+<li>Average extractions in MD significantly higher than in VD and FD</li>
+<li>No significant difference between VD and FD</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=4c680656-13f2-4e96-bfc7-566ed82af68f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Effect-of-Disclosure">Effect of Disclosure<a class="anchor-link" href="#Effect-of-Disclosure">&#182;</a></h4><p><img src="img/info_sharing/extraction_display_extraction.png" alt="Extraction disclosure" /></p>
+<ul>
+<li><strong>Lower Extraction with Disclosure</strong>: Players who disclosed their extraction decision extracted less than non-disclosers.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=a3145370-03d9-4570-a519-36d6495438dc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>VD Treatment</strong>:<ul>
+<li>Overall average and average of disclosed extractions (displayed values) are closely aligned.</li>
+<li>This alignment supports expected effects of social information: imitation, convergence of decisions, and norm formation within groups.</li>
+</ul>
+</li>
+<li><strong>FD Treatment</strong>:<ul>
+<li>A significant discrepancy between average displayed extractions and actual extractions.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=c6a500b6-f7b4-4237-bad8-5c34255f22c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Strategic-Misreporting">Strategic Misreporting<a class="anchor-link" href="#Strategic-Misreporting">&#182;</a></h4><p><img src="img/info_sharing/fd_treatment.png" alt="FD treatment" /></p>
+<ul>
+<li><strong>Strategic Misreporting</strong>: Players who misrepresented their extraction level extracted significantly more than those who reported their actual extraction or chose not to disclose.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=bf4638b6-4359-4d65-acf9-4244f60faf34" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Understanding of Social Optimum</strong>: These players appeared to recognize the social optimum (5 units) as a target extraction level.</li>
+<li><strong>Emergence of Strategic Behavior</strong>:<ul>
+<li>The freedom to selectively disclose favored strategic reporting.</li>
+<li>Players sent misleading signals by reporting extractions near the social optimum, anticipating that others might reduce their own extraction, thus allowing the misreporters to maximize their profit.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=bdd7163c-142f-43c8-abd0-d2fce30f1fee" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Findings-and-implications">Findings and implications<a class="anchor-link" href="#Findings-and-implications">&#182;</a></h3><p><strong>Effects of social information are mixed</strong>:</p>
+<ul>
+<li><strong>VD (Voluntary Disclosure)</strong>: Tends to <strong>encourage cooperative actions</strong> and more sustainable resource use. Cooperative players disclose their actions, while less cooperative players often choose not to disclose to avoid influencing others negatively. This <strong>selective disclosure can foster a cooperative norm</strong> by highlighting lower extractions without spreading non-cooperative behavior.</li>
+<li><strong>FD (Free Disclosure)</strong>: Allows <strong>strategic manipulation</strong> of shared information. Less cooperative players can misrepresent their extractions, signaling a low, socially optimal level, while actually extracting more. This behavior can erode trust, hinder the formation of a social norm, and potentially hasten resource depletion.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=7a90b8a6-96fb-40fb-9274-41dacb6efc0b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Implications</strong>:</p>
+<ul>
+<li>Voluntary disclosure can help align actions with cooperative norms when individuals selectively disclose honest information.</li>
+<li>Free disclosure, however, may undermine group trust and lead to over-exploitation, as selective false reporting can mislead others and disrupt cooperative intentions within the group.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=11b6af7f-32ea-4c1f-890b-706f62510bd0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Quality-Relationships-within-groups">Quality Relationships within groups<a class="anchor-link" href="#Quality-Relationships-within-groups">&#182;</a></h2><p>Brugnach, M., Dubois, D. &amp; Farolfi, S.,&quot;The Power of Bonds: How the Quality of Relationships Within a Group Can Drive Collective Actions in Common Pool Resource Management&quot;</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=60eedd45-a7d6-4895-9dbf-ab2525897324" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Research-question">Research question<a class="anchor-link" href="#Research-question">&#182;</a></h3><ul>
+<li>Relationships shape collective actions in social dilemmas, including CPR management.</li>
+<li>Managing CPRs, like water resources, benefits from cooperative actions which could be influenced by social ties and relational quality.</li>
+</ul>
+<p><strong>Does the quality of relationships within a group impact collective management of common pool resources (CPRs)?</strong></p>
+<p><em>Hypothesis</em>: Strong, positive relationships within a group are likely to foster cooperation and responsible resource extraction.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=66d17be5-3e91-43b9-bc39-eec83b0af691" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Building-Relationships-within-a-Group-in-the-Lab">Building Relationships within a Group in the Lab<a class="anchor-link" href="#Building-Relationships-within-a-Group-in-the-Lab">&#182;</a></h3><p>We developed an <strong>effort task</strong> (counting ones in 10x10 grids of zeros and ones) with three different payoff schemes to shape relational quality:</p>
+<ul>
+<li><strong>Individualistic</strong> (control treatment): Each player is paid based on their own performance.</li>
+<li><strong>Cooperative</strong> (promotes positive relational quality): Each player is paid based on the best performance within the group.</li>
+<li><strong>Competitive</strong> (likely reduces relational quality): Only the player with the highest performance is paid; others receive nothing.</li>
+</ul>
+<p>In all three conditions:</p>
+<ul>
+<li>Players shared <strong>the same 100 grids</strong>, displayed upon clicking numbers from 1 to 100.</li>
+<li><strong>Communication was allowed</strong> in each condition.</li>
+<li>The task had a duration of <strong>3 minutes</strong>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=1967e969-0dee-4bf9-b47e-e881c4aa4386" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Screenshot of the effort task</strong></p>
+<p><img src="img/relationships/effort_task.png" alt="Effort task" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=35d3ebf0-cd16-4c78-af5b-4ca41c64a53f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="CPR-Game">CPR Game<a class="anchor-link" href="#CPR-Game">&#182;</a></h3><p>Adaptation of <strong>Walker, Herr, Gardner, and Ostrom (2000)</strong>'s game for 4 players.</p>
+<ul>
+<li><p><strong>Benefit Function:</strong><br />
+$B_i(x_i) = a x_i - b x_i^2$<br />
+where $x_i$ is the individual extraction, $a$ is a positive constant representing the initial benefit per unit extracted, and $b$ is a positive constant introducing diminishing returns from extraction.</p>
+</li>
+<li><p><strong>Cost Function:</strong><br />
+$C_i(x_i, X) = x_i (c + kX)$<br />
+where $X = \sum_{j=1}^{n} x_j$ is the total extraction of the group, $c$ is the base cost of extraction, and $k$ is an incremental cost parameter linking the cost to total group extraction, introducing a negative externality from shared resource use.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=33c67bd6-413c-498e-a44d-e0eefeddfeaa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p><strong>Nash Equilibrium</strong>:<br />
+Each player maximizes their own payoff, leading to potential overuse of the resource.<br />
+$x_i^{Nash} = \frac{a - c}{2b + k(n + 1)}$</p>
+</li>
+<li><p><strong>Social Optimum</strong>:<br />
+Extraction level maximizes total group payoff, balancing benefits and sustainability.<br />
+$x_i^{Social} = \frac{a - c}{2b + 2kn}$</p>
+</li>
+<li><p><strong>Game Calibration</strong>:<br />
+  $a = 0.383$, $b = 0.001$, $c = 0.005$, $k = 0.005$:<br />
+  <strong>Nash Equilibrium (NE)</strong>: 14 tokens<br />
+  <strong>Social Optimum (SO)</strong>: 9 tokens</p>
+</li>
+<li><p><strong>Conditions</strong>:<br />
+  <strong>Without Communication</strong><br />
+  <strong>With Pre-Play Communication</strong>: 3 minutes of chat before the first round.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=28d8891f-deb3-43e2-a50d-f24ca4a8ea28" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Questionnaire-on-Relational-Quality">Questionnaire on Relational Quality<a class="anchor-link" href="#Questionnaire-on-Relational-Quality">&#182;</a></h3><p>To evaluate <strong>relational quality</strong> within groups, a detailed questionnaire was administered:</p>
+<p><strong>Emotional Experience</strong>: Three optional open-ended questions captured participants’ immediate feelings post-task.</p>
+<p><strong>Relational Quality Dimensions</strong>:</p>
+<ul>
+<li><strong>Personal Feelings</strong>: 16 items measuring individual feelings towards the group.</li>
+<li><strong>Closeness-to-Others (IOS Scale)</strong>: Using the <strong>Inclusion of Other in Self (IOS)</strong> scale (Gächter et al. 2015) to assess perceived closeness within the group.</li>
+<li><strong>Behavioral Attitudes</strong>:<ul>
+<li><strong>Towards Others</strong>: 10 questions about participants' behaviors toward fellow group members.</li>
+<li><strong>Perceptions of Others</strong>: 10 questions about participants’ views on others' behaviors within the group.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Communication Quality</strong>: Three items assessed the perceived quality of intra-group communication during the task.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=a41861fc-7fd0-4f10-a849-7c20a3d8c0c2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Screenshot of the Inclusion of Other if Self (IOS)</strong></p>
+<p><img src="img/relationships/ios.png" alt="IOS" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8ebc339d-5cb3-4ce1-9c4b-2376b53e8d3c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Experimental-design-and-hypotheses">Experimental design and hypotheses<a class="anchor-link" href="#Experimental-design-and-hypotheses">&#182;</a></h3><ul>
+<li>Flow of the experiment: Effort task, questionnaires, CPR Game (10 rounds), Questionnaires.</li>
+<li>Between-subject design</li>
+<li>248 participants<ul>
+<li>88 in treatment Individualist (48 without communication and 40 with communication)</li>
+<li>80 in treatment Cooperation (44 without communication and 36 with communication)</li>
+<li>80 in treatment Competition (44 without communication and 36 with communication)</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>Hypotheses</em></strong></p>
+<ul>
+<li>H1 : <strong>Cooperative effort task enhances relational quality</strong>, while competitive task diminishes it.</li>
+<li>H2: <strong>Higher relational quality leads to better management</strong> of CPRs; lower relational quality worsens CPR outcomes.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=70a02ea8-9508-44d2-8f90-07fd7e941f8d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3><h4 id="Link-between-effort-task-and-responses-to-the-questionnaire">Link between effort task and responses to the questionnaire<a class="anchor-link" href="#Link-between-effort-task-and-responses-to-the-questionnaire">&#182;</a></h4><ol>
+<li><strong>PCA analysis</strong> to identify main components of the questionnaire (44 variables)<ul>
+<li>To <strong>reduce</strong> questionnaire responses <strong>into key components</strong> for understanding relational quality.</li>
+<li>Top components reveal underlying factors.</li>
+</ul>
+</li>
+</ol>
+<p><img src="img/relationships/topTenAxes.png" alt="PCA top 10" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=d1d574dc-fb79-4a67-81f5-bfcefaf47c65" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Players' coordinates on main axes by treatment</strong></p>
+<ul>
+<li>Visualization of player distributions on principal axes based on treatment (Individualistic, Cooperative, Competitive).</li>
+<li>Objective: To examine if the treatments correlate with distinct relational patterns identified in the PCA.</li>
+</ul>
+<p><img src="img/relationships/players_on_axes.png" alt="Players on axes" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=c3e0dea6-d77f-4fe0-a49c-add959313f53" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="2">
+<li><strong>K-Means clustering</strong> of questionnaire responses:<ul>
+<li><strong>Identify distinct clusters of player experiences</strong> within treatments, recognizing that emotions and perceptions may vary by <strong>individual performance</strong> and <strong>group communication dynamics</strong>.</li>
+<li><strong>Methodology</strong>: Elbow method and Silhouette score indicated <strong>2 optimal clusters</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Cluster Visualization on PCA Components</strong><br />
+Shows player distributions by clusters across main PCA axes.</p>
+<p><img src="img/relationships/clusters_participants.png" alt="Cluster on PCA components" /></p>
+<ul>
+<li><strong>Cluster-0</strong>: Mostly cooperative task participants (59/124), with balanced individualist participants (41/88).</li>
+<li><strong>Cluster-1</strong>: Primarily competitive task participants (56/124) and the remaining individualist participants (47/88).</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=f83afe97-739d-422a-af48-02cc7401649f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Impact-of-Group-Composition-on-CPR-Management">Impact of Group Composition on CPR Management<a class="anchor-link" href="#Impact-of-Group-Composition-on-CPR-Management">&#182;</a></h4><p>Analyze CPR extraction behavior in relation to <strong>group composition</strong>, based on relational quality clusters.</p>
+<p><strong>Group Composition Types</strong>:</p>
+<ul>
+<li>Defined by <strong>cluster labels</strong> assigned to each participant (Cluster-0 or Cluster-1).</li>
+<li>Each group (4 players) categorized into three types:<ul>
+<li><strong>Maj. 0</strong>: Majority of Cluster-0 participants (26 groups)</li>
+<li><strong>Maj. 1</strong>: Majority of Cluster-1 participants (25 groups)</li>
+<li><strong>Mix</strong>: Equal representation of Cluster-0 and Cluster-1 (11 groups)</li>
+</ul>
+</li>
+</ul>
+<p>This classification allows us to study how <strong>relational quality</strong> impacts CPR management, testing our hypothesis H2.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=40fc3462-c83f-408a-849a-2bdc767e0f0f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Evolution of average CPR extraction depending on group composition</strong></p>
+<p><img src="img/relationships/extraction_group_cluster_cat.png" alt="Extraction group composition" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=d39b8688-027b-4c4a-b737-f034ed84d6ce" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Findings-and-Implications">Findings and Implications<a class="anchor-link" href="#Findings-and-Implications">&#182;</a></h3><ul>
+<li>Developed an <strong>effort task</strong> to induce diverse relational qualities.</li>
+<li><strong>Heterogeneous emotional and perceptual responses</strong> emerged, even within the same effort task.<ul>
+<li><strong>Cluster Analysis</strong> grouped individual profiles based on similarity rather than treatment: Identified <strong>Cluster-0</strong> (positive responses) and <strong>Cluster-1</strong> (negative responses), offering clearer insights into relational quality variations.</li>
+</ul>
+</li>
+<li><strong>Maj. 0</strong> groups (Cluster-0 members) had lower extractions; <strong>Maj. 1</strong> groups (Cluster-1 members) had higher extractions.</li>
+<li><strong>Group composition</strong> and specific emotions impacted CPR management more than treatments alone.</li>
+<li>As supported in the literature, <strong>communication</strong> notably reduced CPR extractions.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=d2531931-8c3f-46bc-a113-216a0678befa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="CPR-Management-in-Dynamic-Environments">CPR Management in Dynamic Environments<a class="anchor-link" href="#CPR-Management-in-Dynamic-Environments">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=de950b80-214d-402d-b48e-76cbe65239e0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>CPRs have mainly been studied in a <strong>static framework</strong>: the resource is assumed to be fixed and unchanging over the course of the game. Players make decisions about how much to extract from the resource but theses decisions do not affect the future availability of the resource.</li>
+<li>However in reality <strong>many CPRs are dynamic</strong> : they regenerate over an infinite horizon of time and the extraction decisions made by players can affect the future availability of the resource.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=b80b0513-777f-412c-b47e-40bfaebc33cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Theoretical-Model">Theoretical Model<a class="anchor-link" href="#Theoretical-Model">&#182;</a></h2><p>Based on <strong>Rubio &amp; Casino (2003)</strong></p>
+<ul>
+<li>Linear quadratic model in which two agents $i$ and $j$ exploit a renewable resource $H$, the resource can be assimilated to a groundwater</li>
+<li>Extraction from the resource generates a revenue $B(w) = aw -\frac{b}{2}w^2$</li>
+<li>Extraction has a cost $C(H, w) = max(0, c_0-c_1H)w$<ul>
+<li>The cost depends negatively on the level of resource $H$</li>
+<li>The cost is positive when the resource level is lower than $\frac{c_0}{c_1}$ and null if equal or higher. This a piecewise function to avoid subsidy in case of a high level of resource</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=1cd41031-cacf-4800-8c09-6acf21ea9856" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In the infinite horizon, the total discounted payoff is given by</p>
+<p>$\int_{0}^{\infty}e^{-rt} \left[ aw_i(t)-\frac{b}{2}w_i(t)^{2}-\max (0,\; c_{0}-c_{1}H(t))w_i(t) \right]dt$</p>
+<p>with $\dot H(t)=R-\alpha(w_i(t)+w_j(t))$</p>
+<p>$r$ is the discount rate, $R$ is the natural recharge and $\alpha$ is the return flow coefficient.</p>
+<p><strong>Each player's extraction reduces the resource level, affecting not only their own future payoffs but also the other player's future payoffs</strong>. This interdependence of decisions and outcomes, inherent in CPRs, is incorporated into this dynamic equation.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=55e89ba5-ad72-440a-a0ea-66b6d8e0633c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>3 benchmarks</strong></p>
+<ul>
+<li><strong>Social optimum</strong>: both players in the pair maximize the joint discounted net payoffs and maintain the resource at an efficient level (cooperative solution)</li>
+<li><strong>Feedback</strong>: players maximize their own discounted net payoffs, they adopt a non-cooperative strategy</li>
+<li><strong>Myopic</strong>: at each instant players maximize their current payoff regardless of the evolution of the resource</li>
+</ul>
+<p>Choice of parameters such that theoretical paths are disctincts : $H_0=15, R=0.56, a=2.5, b=1.8, c_0=2, c_1=0.1, r=0.005, \alpha=1$</p>
+<p><img src="img/theoretical_paths.png" alt="Theoretical Paths" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=ef77b796-4b6c-4237-bfc0-0336ed168a24" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Time-in-the-lab">Time in the lab<a class="anchor-link" href="#Time-in-the-lab">&#182;</a></h2><p><strong>Continuous time</strong></p>
+<ul>
+<li>In continuous time, extractions can be made at any instant and the resource evolves continuously.</li>
+<li>In a laboratory setting, it's necessary to <strong>discretize the model</strong> to facilitate the experimental process. This is because the continuous-time model would require instantaneous decision-making and feedback, which is <strong>not feasible in a real-world setting</strong> (exchange of information between the computer and the server).</li>
+</ul>
+<p><strong>Discrete-time in the lab</strong></p>
+<p>In discrete time, extractions are made at <strong>specific intervals</strong> and the resource evolves from one interval to the next.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=6b54f943-b910-4e72-8093-a13c6f86eb7c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Infinite-Horizon-in-the-lab">Infinite Horizon in the lab<a class="anchor-link" href="#Infinite-Horizon-in-the-lab">&#182;</a></h2><ul>
+<li><strong>Incorporated into Players' Payoff Calculations:</strong> Models long-term impact by combining <strong>cumulative and future payoffs</strong>.</li>
+<li><strong>Dual Payoff Components</strong>:<ul>
+<li><strong>Cumulative Discounted Payoff</strong>: Sum of payoffs from ( t=0 ) to ( t=p ), accounting for past actions.</li>
+<li><strong>Future Discounted Payoff</strong>: Projected payoff from ( t=p ) to ( t=\infty ) based on a steady extraction rate.</li>
+</ul>
+</li>
+<li>Encourages players to <strong>consider sustainable extraction rates</strong> by making long-term consequences more salient.</li>
+<li><strong>Discounting parameter</strong> plays a crucial role, as a higher discount rate favors <strong>short-term gains</strong> over sustainability, while a lower rate promotes <strong>resource preservation</strong>.</li>
+<li><strong>Result</strong>: By observing cumulative and future effects, players gain a clearer understanding of the <strong>trade-offs between current and future extraction</strong>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=7d6e2b3b-4b63-47f3-8284-dbc68fd8665c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Continuous-vs.-discrete-time">Continuous vs. discrete time<a class="anchor-link" href="#Continuous-vs.-discrete-time">&#182;</a></h2><p>Djiguemde, M., Dubois, D., Sauquet, A. &amp; Tidball, M., 2022. &quot;<a href="https://doi.org/10.1007/s10640-022-00700-2">Continuous Versus Discrete Time in Dynamic Common Pool Resource Game Experiments</a>&quot;. Environmental and Resource Economics 82, pp. 985-1014.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=3a74f044-eff7-4446-81a8-f35a4ce68b09" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Conditions-for-comparison">Conditions for comparison<a class="anchor-link" href="#Conditions-for-comparison">&#182;</a></h3><ul>
+<li>We designed two conditions to approximate continuous-time (discretization rate $\tau=0.1$) and discrete-time (discretization rate $\tau=1$) models.</li>
+<li>Both models are <strong>theoretically similar</strong> given these discretization rates</li>
+<li>Each condition had a total <strong>play time of 10 minutes</strong>:<ul>
+<li>Continuous-Time (CT) treatment: <strong>600 seconds</strong> of play, where 1 second = 0.1 instant in the model.</li>
+<li>Discrete-Time (DT) treatment: <strong>60 periods</strong>, with 10 seconds per period. Here, 1 period = 1 instant in the model.</li>
+<li>Both treatments involved <strong>60 model instants</strong> of play.</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>The study investigates behavioral differences in continuous vs. discrete time settings.</em></strong></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=56e00f89-8e60-431d-9f6c-64095870f286" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div style="display: inline-block; width: 45%">
+    <img src="./img/cont_disc/screenshot_continuous.png" alt="Continuous Time">  
+    <p><strong>Continuous Time</strong></p>
+</div>
+<div style="display: inline-block; width: 45%">
+    <img src="./img/cont_disc/screenshot_discrete.png" alt="Discrete Time">
+    <p><strong>Discrete Time</strong></p>
+</div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=2b5b0a0b-b1a0-496c-9c93-f1e8ee972b69" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Experimental-Design">Experimental Design<a class="anchor-link" href="#Experimental-Design">&#182;</a></h3><ul>
+<li>Between subject design</li>
+<li>A total of 392 participants.</li>
+<li>In the optimal control scenario (single player extracting from the resource), we had 202 participants: 104 in the Continuous-Time (CT) treatment and 98 in the Discrete-Time (DT) treatment.</li>
+<li>In the game scenario (two players extracting from the same resource), we had 190 participants: 49 pairs in the CT treatment and 46 pairs in the DT treatment.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=fabd91de-0d5c-48fb-9749-d05874bfcd4b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3><p><img src="img/cont_disc/cont_dis_results.png" alt="Courbes résultat" /></p>
+<ul>
+<li>The resource increases in the optimal control (single player) scenario, but decreases as soon as strategic interaction is introduced.</li>
+<li>The nature of time does not significantly affect player behavior in individual play.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=b47aa26b-0af0-4c70-ae35-db40e66578c4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>In the game</strong></p>
+<ul>
+<li>In the continuous-time treatment, players adjust their extraction rates more frequently and in smaller increments compared to the discrete-time treatment.</li>
+<li>In the CT treatment, players were more likely to use a &quot;tit-for-tat&quot; strategy, where they would match the extraction rate of the other player. In the DT treatment, players were more likely to use a &quot;best response&quot; strategy, where they would adjust their extraction rate based on the other player's previous extraction rate.</li>
+<li>Final payoffs are more unequally distributed in the DT treatment compared to the CT treatment.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=f7f28c1b-43db-41e0-8706-aa48f3efd1bf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Findings-and-implications-for-resource-management">Findings and implications for resource management<a class="anchor-link" href="#Findings-and-implications-for-resource-management">&#182;</a></h3><ul>
+<li>The nature of time matters when the common pool resource is played with strategic interactions between stakeholders.</li>
+<li>This study also makes a significant methodological contribution. We proposed a novel methodology for testing continuous-time models in a laboratory setting, despite the inherent discrete nature of such implementations. This approach allows for a more accurate representation of continuous-time dynamics and provides a framework for future experimental studies in this area.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=cc334a4f-a241-4deb-99f2-09fda272763d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Discounting">Discounting<a class="anchor-link" href="#Discounting">&#182;</a></h2><p>Davin, M., Dubois, D., Erdlenbruch, K. &amp; Willinger, M., 2024. &quot;<a href="https://hal.inrae.fr/hal-04477409">Discounting and extraction behavior in continuous time resource experiments</a>&quot;. CEE-M Working Paper 2024-06.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0be8cde7-fb0d-4483-998d-0a5a31d13f35" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Research-question">Research question<a class="anchor-link" href="#Research-question">&#182;</a></h3><p>In dynamic games, <strong>discounting is typically based on a reference period</strong>.</p>
+<ul>
+<li>Theory: discounting is done at <strong>time zero</strong>, where agents choose optimal paths.</li>
+<li>Reality: in experiments, participants continuously adapt their extraction strategies.</li>
+</ul>
+<p>This paper examines <strong>how different discounting periods affect behavior</strong> in a resource extraction experiment.</p>
+<p><strong>Theory suggests no difference</strong> in optimal behavior based on the discounting reference period.<br />
+However, <strong>if subjects revise their extraction plans</strong>, p-discounting may influence decisions.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=22f3112b-d0c2-4fb2-9eaf-f634ba34a080" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Difference-Between-z-Discounting-and-p-Discounting-Gains">Difference Between z-Discounting and p-Discounting Gains<a class="anchor-link" href="#Difference-Between-z-Discounting-and-p-Discounting-Gains">&#182;</a></h3><p>For a given payoff function $G(E_t, R_t)$, where $E_t$ is the extraction rate and $R_t$ is the resource stock at time $t$, the total discounted gains are calculated as follows (with $\rho$ the discount rate):</p>
+<p><strong>z-Discounting (time-zero discounting)</strong>: Discounting is applied from the initial time point ($t=0 $), meaning all future payoffs are valued relative to the <strong>initial starting time</strong>. 
+    $$
+   GP_p^Z = \int_{t=0}^p e^{-\rho t} G(E_t, R_t) \, dt + \int_{t &gt; p}^\infty e^{-\rho t} G(E_t, R_t) \, dt
+   $$</p>
+<p><strong>p-Discounting (present-time discounting)</strong>: Discounting is applied relative to the <strong>current time</strong> $p$, meaning all payoffs are evaluated based on their value at $p$, regardless of the starting point.
+   $$
+   GP_p^P = \int_{t=0}^p e^{\rho (p - t)} G(E_t, R_t) \, dt + \int_{t &gt; p}^\infty e^{-\rho (t - p)} G(E_t, R_t) \, dt
+   $$</p>
+<p><strong>Relationship Between z-Discounting and p-Discounting</strong>:</p>
+<ul>
+<li><strong>Conversion Factor</strong>: $GP_p^P = GP_p^Z \times e^{\rho p}$</li>
+<li>This factor $e^{\rho p}$ scales the p-discounted gains relative to the z-discounted gains.</li>
+<li><strong>Interpretation</strong>: While both discounting methods aim to model long-term value, the choice of reference point (initial time vs. present time) affects perceived gain magnitude. This shift can <strong>influence behavior</strong>, especially in dynamic settings, as players may respond differently to nominally larger or smaller gains.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=ad8709ac-6aec-4dc1-a9da-70fa2db612b2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Experimental-design">Experimental design<a class="anchor-link" href="#Experimental-design">&#182;</a></h3><ul>
+<li>A <strong>continuous-time</strong> resource extraction game.</li>
+<li>Two parts : <strong>optimal control</strong> (single player) and <strong>game</strong> (2 players interaction). (<em>only optimal control analyzed in the paper</em>)</li>
+<li><strong>Between-subject design</strong></li>
+<li>Two treatments:<ul>
+<li><strong>z-discounting</strong>: Gains discounted at time zero. 90 participants.</li>
+<li><strong>p-discounting</strong>: Gains discounted at the current time. 70 participants</li>
+</ul>
+</li>
+<li>Feedback is provided on resource levels, extractions, and gains.</li>
+<li><strong>5 minutes of play</strong> (300 secondes)</li>
+<li>Control tasks: Convex Time Budget (CTB, impatience), Bomb Risk Elicitation Task (BRET, risk tolerance)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=4bd59d4d-ecd3-4fb1-afb6-88e02e890195" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3><p><img src="img/discounting/evolution.png" alt="Evolution" /></p>
+<ul>
+<li><em>Extraction rates</em>: <strong>Higher under p-discounting</strong> compared to z-discounting. Significant deviation from the optimal extraction path in p-discounting.</li>
+<li><em>Resource depletion</em>: <strong>Faster depletion in p-discounting</strong>. Suboptimal behavior compared to z-discounting.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=ea6fdd4a-0156-4a10-bd78-d3e00d6cee2e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Subjects who followed optimal strategies showed no treatment effect</strong>.</li>
+<li>Non-optimal subjects extracted more under p-discounting.</li>
+</ul>
+<p><img src="img/discounting/extraction_optimality.png" alt="Payoffs" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=705bb9d9-2fab-4da5-9995-7db70c1cda83" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Findings-and-implications">Findings and implications<a class="anchor-link" href="#Findings-and-implications">&#182;</a></h3><ul>
+<li>Contrary to theory, discounting reference periods affect behavior.</li>
+<li>Behavior is influenced by <strong>perceived gains</strong> rather than rational planning.</li>
+<li>Suggest reliance on z-discounting for better alignment with theoretical predictions.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=097efea4-d6b8-4989-9ab1-fd70d1864224" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Individual-and-strategic-behaviors">Individual and strategic behaviors<a class="anchor-link" href="#Individual-and-strategic-behaviors">&#182;</a></h2><p>Djiguemde, M. Dubois, D. Sauquet, A. &amp; Tidball, M., 2022. &quot;<a href="https://doi.org/10.1080/00036846.2022.2129576">Individual and strategic behaviors in a dynamic extraction problem: results from a within-subject experiment in continuous time</a>&quot;. Applied Economics, pp. 1-24.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8cd4c2a3-d776-4f7a-aaa6-f54fc3ad3817" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Research-questions">Research questions<a class="anchor-link" href="#Research-questions">&#182;</a></h3><ul>
+<li>Do experimental subjects behave as predicted by the dynamic continuous-time model ?</li>
+<li>What is the impact of strategic interactions in the dynamic context ?</li>
+</ul>
+<p><strong>We compare the observations to the theoretical behaviors, in a single agent situation (optimal control problem) and in a two-players game (differential game).</strong></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=defe38f3-db72-472a-ba12-ba1b9c1e5cd7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Experimental-design">Experimental design<a class="anchor-link" href="#Experimental-design">&#182;</a></h3><p>We used an experimental protocol close the one described in the previous experiment, with the following differences:</p>
+<ul>
+<li><strong>Within-subject design</strong>: each participant played both the optimal control scenario and the game.</li>
+<li>2 trials of the <strong>single player</strong> scenario before playing for money.</li>
+<li>2 trials of the <strong>two-players game</strong> before playing for money.</li>
+<li>Experiment in continous-time with $\tau=1$, so that <strong>1 second = 1 instant</strong> in the model.</li>
+<li>5 minutes of play (300 seconds).</li>
+<li>70 participants.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=ea75d815-6684-4608-9c22-ac3927dfa720" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3><p><strong>Evolution of the resource level</strong></p>
+<p><img src="img/resource_both_treatment.png" alt="Av. resource in both treatments" /></p>
+<ul>
+<li>Over-exploitation at the beginning (higher in the game).</li>
+<li>Greater dispersion observed in the game.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=f18bb441-6808-4b09-bf52-c1fe4c40a207" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Player Behavior Profiles</strong></p>
+<ul>
+<li>We analyzed whether individuals and groups exhibited <strong>myopic, feedback, or optimal behavior</strong>.</li>
+<li>This was based on the <strong>Mean Squared</strong> between the observed path and the theoretical one.</li>
+<li>We <strong>classified players/groups</strong> as &quot;significantly&quot; optimal, myopic, feedback, or undetermined based on their MSDs.</li>
+<li>We also considered the conditional MSD (with respect to the $t - 1$ resource level) and applied regressions to check that the coefficient of the conditional decisions corresponding to the lowest MSD was actually different from zero.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=05e98169-34ec-4d0d-a1b4-87ca1f54d3c5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Optimal control problem</strong></p>
+<ul>
+<li>27.14% of participants exhibited <i>optimal</i> behavior, while 72.86% were <strong>undetermined</strong>.</li>
+<li>Upon <strong>visual inspection</strong> of the undetermined profiles, we defined new profiles: <strong>convergent</strong> (21.43%) and <strong>under-exploiter</strong> (24.29%)</li>
+<li>27.14% remained <strong>without any particular pattern</strong></li>
+</ul>
+<p><img src="img/control_profiles.png" alt="Control Profiles" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0b379c65-8501-4c70-8462-5b622d1b94d4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Game</strong></p>
+<ul>
+<li>20% of groups exhibited <strong>optimal behavior</strong>, while 80% were <strong>undetermined</strong></li>
+<li>Upon <strong>visual inspection</strong> of the undetermined profiles, we defined new profiles : <strong>convergent</strong> (25.71%), <strong>under-exploiter</strong> (14.29%) and <strong>over-exploiter</strong> (17.14%)</li>
+<li>22.86% remained <strong>without any particular pattern</strong></li>
+</ul>
+<p><img src="img/game_profiles.png" alt="Game Profiles" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=7573f451-2fae-44a3-a27b-828515940d97" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Group Composition and Game Outcome</strong></p>
+<ul>
+<li>The composition of groups, in terms of the profiles identified in the optimal control scenario, significantly impacts the outcome of the game.</li>
+<li>Groups composed of players who exhibited optimal or convergent behavior in the optimal control scenario tend to perform better in the game scenario: they are more likely to coordinate their actions and achieve higher collective payoffs.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=46c93a24-7237-492d-94cf-9abf9d4aaa74" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Findings-and-implications-for-resource-management">Findings and implications for resource management<a class="anchor-link" href="#Findings-and-implications-for-resource-management">&#182;</a></h3><ul>
+<li>As expected, <strong>strategic interaction increases the tragedy of the common</strong>.</li>
+<li>Nearly 20-25% of individuals and groups succeed in playing <strong>significantly optimal</strong>.</li>
+<li>Another 20-25% play optimally but over a finite horizon, the category we called <strong>convergent</strong>.</li>
+<li>Our findings underscore the importance of <strong>educating players</strong> about optimal strategies in dynamic resource management contexts.</li>
+<li>When players understand how to manage resources optimally over an infinite horizon in a <strong>single-player scenario</strong>, they are better equipped to handle the complexities introduced by strategic interactions in a <strong>multi-player scenario</strong>.</li>
+<li>Therefore, efforts to improve individual understanding and decision-making in dynamic resource management can have significant positive impacts on collective outcomes when strategic interactions are involved.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=dcccc054-e59b-4ef5-9bba-3d8db5803632" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Ongoing-Research-Questions-and-Projects">Ongoing Research Questions and Projects<a class="anchor-link" href="#Ongoing-Research-Questions-and-Projects">&#182;</a></h2><p><strong>Threshold Effects in Resource Management</strong></p>
+<ul>
+<li>Examining the impact of an exogenous depletion threshold on resource sustainability.</li>
+<li>If the resource stock falls below this threshold, it will not renew, making extraction impossible.</li>
+</ul>
+<p><strong>Impact of Predetermined Shocks on Resource Growth</strong></p>
+<ul>
+<li>Studying the effects of a shock at a fixed or random date on resource availability.</li>
+<li>The shock reduces resource growth, simulating environmental changes like reduced rainfall.</li>
+</ul>
+<p><strong>Intergenerational Management of Common Pool Resources (CPR)</strong></p>
+<ul>
+<li>Investigating decision-making and resource extraction behavior across generations.</li>
+<li>Focus on sustainability strategies and knowledge transfer between successive stakeholders.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=e4b26055-93dd-4e29-a8bc-3bb5c3b3cebe" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Dynamic-Common-Pool-Resource-with-Spatial-Externalities">Dynamic Common Pool Resource with Spatial Externalities<a class="anchor-link" href="#Dynamic-Common-Pool-Resource-with-Spatial-Externalities">&#182;</a></h1><p>Bayle, G., Dubois, D., Beaud, M., Willinger, M. &amp; Querou, N., &quot;Managing Mobile Common Pool Resources: An Experimental Investigation of Spatial Externalities and Collective Action&quot;.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=c8c6fd67-2196-4602-9ad6-5d8fbe02902e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Research-questions">Research questions<a class="anchor-link" href="#Research-questions">&#182;</a></h2><ul>
+<li>How natural resources, which <strong>move between different management zones</strong>, can be effectively managed.</li>
+<li>Understand the dynamics of resource management and exploitation in a context where resources are mobile.</li>
+</ul>
+<p><strong>Impact of Spatial Externalities</strong>: Examine how spatial externalities affect the efficiency of resource management. Spatial externalities occur when resource exploitation in one area impacts the availability and quality of resources in neighboring areas.</p>
+<p><strong>Comparison of Management Structures</strong>: Compare single-actor management with shared management by multiple actors to determine which structure minimizes conflicts and maximizes resource sustainability.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8ad9f397-75b6-4d0a-92fd-4775cbaa3e57" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Mobile-resources">Mobile resources<a class="anchor-link" href="#Mobile-resources">&#182;</a></h2><ul>
+<li><strong>Fisheries</strong>: Fish stocks move between fishing zones. Management involves spatial externalities, as exploitation in one area can affect stock availability in others. (Costello &amp; Polasky 2008; Sanchirico &amp; Wilen 1999)</li>
+<li><strong>Transboundary Aquifers</strong>: Groundwater aquifers span multiple jurisdictions. Pumping in one region affects water availability in connected regions. (Brozovic, Sunding, &amp; Zilberman 2010; Pfeiffer &amp; Lin 2012)</li>
+<li><strong>Communal Pastures</strong>: Shared grazing lands are used by multiple herders. Overgrazing in one area can degrade resources and affect neighboring areas due to herd mobility. (Ostrom 1990)</li>
+<li><strong>Transboundary Forests</strong>: Forests span multiple jurisdictions, and logging in one area can affect neighboring areas, particularly concerning biodiversity and ecosystem services. (Albers &amp; Robinson 2013).</li>
+<li><strong>Pollination and Ecosystem Services</strong>: Pollinators (like bees) move between crop fields, and managing pollination habitats in one area can affect agricultural productivity in neighboring areas. (Ricketts et al. 2008)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=238484df-ecd7-4141-b3b3-2ff5b3669eb9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Theoretical-Model">Theoretical Model<a class="anchor-link" href="#Theoretical-Model">&#182;</a></h2><p><em>Based on Costello et al. (2015)</em></p>
+<ul>
+<li><strong>Discrete Spatial Domain</strong>: N patches, each managed independently but interlinked through resource mobility.</li>
+<li><strong>Discrete Time Model</strong>: The state of the resource and management actions are updated period by period.</li>
+<li><strong>Resource Growth Dynamics</strong>: Growth function $g(e,\alpha)$ depends on the escapement $e$ (residual stock) and growth parameters $\alpha$.</li>
+<li><strong>Mobility Matrix</strong>: $D_{ij}$ defines the fraction of resources moving from patch $i$ to patch $j$, capturing the spatial dynamics of resource movement. $D_{ii}$ refers to the retention rate.</li>
+<li><strong>Profit Function</strong>: $\pi_{it}=p_i \times h_{it}$, where $p_i$ is the price of the resource in patch $i$ and $h_{it}$ is the harvested amount at time $t$.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=2fedb7cb-ca29-4906-b037-277d961266d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Impact of Spatial Externalities and Management Structure</strong></p>
+<div style="display: inline-block; width: 45%">
+    <img src="img/patchs.png">
+</div>
+<div style="display: inline-block; width: 45%">
+    <img src="img/patchs2.png">
+</div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=48d848c3-5a8f-446c-b29e-292e6329f110" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Theoretical-predictions">Theoretical predictions<a class="anchor-link" href="#Theoretical-predictions">&#182;</a></h2><p><strong>Efficient path maximizing the aggregate payoffs in both patches over the entire time horizon</strong>: Since $\alpha &gt; 0$ the resource is conserved in both patches (zero harvest) up until the last period and entirely extracted in the last period.</p>
+<p><strong>Under decentralized (non cooperative) management</strong>, the subgame perfect Nash equilibrium (SPNE) depends on the <strong>marginal productivity</strong> of the patch and the <strong>number of players managing the patch</strong></p>
+<p>Patch marginal productivity (retention rate x growth factor) : $D_{ii} \times (1 + \alpha)$</p>
+<ul>
+<li>If $D_{ii} \times (1 + \alpha)&lt;1$ (<strong>low marginal productivity</strong>), the resource is mined in both patches initially.</li>
+<li>If $D_{ii} \times (1 + \alpha)&lt;2$ (<strong>high marginal productivity</strong>), the number of players affects equilibrium harvests.<ul>
+<li>With <strong>one player per patch</strong> (1A-1B), the SPNE path matches the efficient path.</li>
+<li>With <strong>two players in patch B</strong> (1A-2B), B players mine continuously, while the A players leaves the resource until the final period, then harvests all remaining stock.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=997b699d-bb52-4c88-8c2e-cc5668f02b34" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>H1 : <strong>Higher resource mobility decreases overall management efficiency</strong> and increases the likelihood of over-exploitation.</li>
+</ul>
+<p><em>High resource mobility implies low marginal productivity for the patch.</em></p>
+<ul>
+<li>H2 : <strong>Single manager systems are more efficient and sustainable</strong> compared to multiple manager systems.</li>
+</ul>
+<p><em>If 2 players in patch B, even in case of a high marginal productivity they mine the resource in their patch.</em></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=e38ec542-eabc-4f43-a633-bb07de0cc7c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Experimental-design-and-parameters">Experimental design and parameters<a class="anchor-link" href="#Experimental-design-and-parameters">&#182;</a></h2><ul>
+<li>Initial resource : 10 units on each patch</li>
+<li><strong>Resource growth</strong> : $\alpha = 0.4$</li>
+<li><strong>Dispersion rates</strong> : $D_{ij}$ = 0.25, 0.5, 0.75 | <strong>Retention rates</strong> :  $D_{ii}$ = 0.75, 0.50, 0.25</li>
+<li>Group-compositions : <strong>1A-1B</strong> and <strong>1A-2B</strong></li>
+<li>1 game = 5 periods with a constant dispersion/retention rate</li>
+<li>3 games per session - random rematching after each game</li>
+<li><strong>3 different orders for the dispersion/retention rate</strong> : (0.50, 0.25, 0.75); (0.25, 0.50, 0.75); (0.75, 0.50, 0.25)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=c7487995-ba89-4ff2-b4e2-dd1b7ca62358" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Theoretical predictions with the parameters</strong></p>
+<p><img src="img/spatial/theoretical_prediction.png" alt="Theoretical predictions" /></p>
+<p><em>H1 : Higher resource mobility (lower retention rate) decreases overall management efficiency and increases the likelihood of over-exploitation</em><br />
+<strong>Total resource harvest with Dij = 0.25 &gt; Dij = 0.50 and Dij=0.75</strong></p>
+<p><em>H2 : Single manager systems are more efficient and sustainable compared to multiple manager systems</em><br />
+<strong>Total resource harvest 1A-1B &gt; 1A-2B</strong></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0ff7930a-5b02-4268-865d-66e96a31da20" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Screenshot (1A-2B)</strong></p>
+<p><img src="./img/spatial/screenshot.png" alt="Screenshot" /></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=f0887662-6b12-4a05-8e4f-3100f3343347" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Data collected in the Laboratory for Experimental Economics - Montpellier</strong></p>
+<table>
+<thead>
+<tr>
+  <th>Players per Group</th>
+  <th># Participants</th>
+  <th>Mobility Order</th>
+  <th># Groups</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2</td>
+  <td>126</td>
+  <td>50% - 25% - 75%</td>
+  <td>22</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>25% - 50% - 75%</td>
+  <td>21</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>75% - 50% - 25%</td>
+  <td>20</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>168</td>
+  <td>50% - 25% - 75%</td>
+  <td>18</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>25% - 50% - 75%</td>
+  <td>20</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>75% - 50% - 25%</td>
+  <td>18</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=87156cdf-1941-4eb4-92bf-b74f18dce979" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h2><p><strong>Higher resource mobility decreases overall management efficiency and single manager systems are more efficient than multiple manager systems.</strong></p>
+<div style="display: inline-block; width: 45%">
+<img src="img/spatial/extraction.png" alt="Extractions">
+</div>
+<div style="display: inline-block; width: 45%; vertical-align: top">
+<img src="img/spatial/econometrics.png" alt="Econometric model">
+</div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0d10cd2d-15cf-4db5-a5b0-ac62c275b473" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Findings-and-implications">Findings and implications<a class="anchor-link" href="#Findings-and-implications">&#182;</a></h2><ul>
+<li>Higher resource mobility decreases management efficiency and increases over-exploitation.</li>
+<li>Single manager systems are more efficient and sustainable than multiple manager systems.</li>
+</ul>
+<p><strong>Implications</strong></p>
+<ul>
+<li>Emphasize the importance of coordinated management practices to mitigate the negative effects of resource mobility.</li>
+<li>Support the implementation of property rights or centralized management to enhance resource sustainability.</li>
+</ul>
+<p><strong>Ongoing Research</strong></p>
+<ul>
+<li>Investigate the effects of asymmetry in the marginal productivity of the patches.</li>
+<li>Introduce and study the impact of risk on the resource within the patches.</li>
+</ul>
+
 </div>
 </div>
 </div>
