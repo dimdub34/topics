@@ -69,6 +69,12 @@ style: |
 
 ---
 
+5. [Appendix](#appendix)
+  A. [Dynamic CPR - Maximization Problems](#a-dynamic-cpr---maximization-problems)
+  B. [The exponential function in discounting?](#b-the-exponential-function-in-discounting)
+
+---
+
 ![QR Code to the slides](img/topics.png)
 
 🌐 <https://www.duboishome.info/dimitri/cours/topics>
@@ -566,7 +572,7 @@ $e^{-rt}$ is the discount factor ($r$ is the discount rate), $R$ is the natural 
 
 Choice of parameters such that theoretical paths are disctincts : $H_0=15, R=0.56, a=2.5, b=1.8, c_0=2, c_1=0.1, r=0.005, \alpha=1$
 
-![h:500px Theoretical Paths](img/theoretical_paths.png)
+![h:500px Theoretical Paths](img/profiles/theoretical_paths.png)
 
 ---
 
@@ -1485,7 +1491,138 @@ Compared to Patch A x $A_h$ (ref.):
 
 ---
 
-## Why do we use the exponential function in discounting?
+## A. Dynamic CPR - Maximization Problems
+
+Two agents $i$ and $j$ exploit a renewable resource $H(t)$ (e.g., groundwater).  
+Each player’s instantaneous profit is:
+$$
+\pi_i(H, w_i) = a w_i - \frac{b}{2}w_i^2 - \max(0, c_0 - c_1 H)\, w_i
+$$
+
+The dynamics of the resource stock are:
+$$
+\dot{H}(t) = R - \alpha (w_i + w_j), \qquad H(0) = H_0,
+$$
+where $R > 0$ is the natural recharge, and $\alpha > 0$ the return flow coefficient.  
+The discount rate is $r > 0$.
+
+---
+
+### Social Optimum
+
+The planner maximizes the joint discounted net payoffs of both players:
+$$
+\max_{\{w_i(t), w_j(t)\}_{t \ge 0}} 
+\int_0^{\infty} e^{-rt}
+\left[
+\sum_{k \in \{i,j\}} 
+\left( a w_k - \frac{b}{2}w_k^2 - \max(0, c_0 - c_1 H)\, w_k \right)
+\right] dt
+$$
+subject to:
+$$
+\dot{H}(t) = R - \alpha (w_i + w_j)
+$$
+
+#### Hamiltonian
+$$
+\mathcal{H}^S =
+\sum_{k \in \{i,j\}} 
+\left( a w_k - \frac{b}{2}w_k^2 - \max(0, c_0 - c_1 H)\, w_k \right)
++ \lambda^S \big(R - \alpha (w_i + w_j)\big)
+$$
+
+---
+
+#### First-order conditions
+$$
+\frac{\partial \mathcal{H}^S}{\partial w_i}
+= a - b w_i - \max(0, c_0 - c_1 H) - \alpha \lambda^S = 0,
+$$
+$$
+\dot{\lambda}^S = r \lambda^S - 
+\frac{\partial \mathcal{H}^S}{\partial H}
+= r \lambda^S - 
+\sum_{k \in \{i,j\}}
+\frac{\partial}{\partial H}
+\big[\max(0, c_0 - c_1 H)\, w_k \big].
+$$
+
+In symmetric equilibrium ($w_i = w_j = w^S$):
+$$
+\dot{H} = R - 2 \alpha w^S, \qquad
+a - b w^S - \max(0, c_0 - c_1 H) - \alpha \lambda^S = 0.
+$$
+
+---
+
+### Feedback Nash Equilibrium
+
+Each player $i$ maximizes his own discounted payoff, anticipating the other’s feedback rule $w_j(H)$:
+$$
+\max_{\{w_i(t)\}_{t \ge 0}} 
+\int_0^{\infty} e^{-rt}
+\left[a w_i - \frac{b}{2}w_i^2 - \max(0, c_0 - c_1 H)\, w_i \right] dt
+$$
+subject to:
+$$
+\dot{H} = R - \alpha (w_i + w_j(H)).
+$$
+
+#### Hamiltonian
+$$
+\mathcal{H}_i^F =
+a w_i - \frac{b}{2}w_i^2 - \max(0, c_0 - c_1 H)\, w_i
++ \lambda_i^F \big(R - \alpha (w_i + w_j(H))\big)
+$$
+
+---
+
+#### First-order conditions
+$$
+\frac{\partial \mathcal{H}_i^F}{\partial w_i}
+= a - b w_i - \max(0, c_0 - c_1 H) - \alpha \lambda_i^F = 0,
+$$
+$$
+\dot{\lambda}_i^F = r \lambda_i^F - 
+\frac{\partial \mathcal{H}_i^F}{\partial H}
+= r \lambda_i^F - 
+\frac{\partial}{\partial H}\big[\max(0, c_0 - c_1 H)\, w_i \big]
+- \lambda_i^F \alpha \frac{dw_j(H)}{dH}.
+$$
+
+In symmetric equilibrium ($w_i = w_j = w^F(H)$):
+$$
+\dot{H} = R - 2 \alpha w^F(H), \qquad
+a - b w^F(H) - \max(0, c_0 - c_1 H) - \alpha \lambda^F = 0.
+$$
+
+---
+
+### Myopic Benchmark
+
+At each instant, players maximize only their \emph{current} payoff, taking $H$ as given.
+
+$$
+\max_{w_i \ge 0} \;
+a w_i - \frac{b}{2}w_i^2 - \max(0, c_0 - c_1 H)\, w_i.
+$$
+
+#### First-order condition
+$$
+a - b w_i - \max(0, c_0 - c_1 H) = 0
+\quad \Rightarrow \quad
+w_i^M(H) = \frac{a - \max(0, c_0 - c_1 H)}{b}, \quad w_i^M \ge 0.
+$$
+
+If $H \ge \frac{c_0}{c_1}$ (zero cost), then:
+$$
+w_i^M = \frac{a}{b}.
+$$
+
+---
+
+## B. The exponential function in discounting?
 
 The exponential function $e^{-\rho t}$ is used in continuous-time discounting because it has key mathematical and economic properties:
 
