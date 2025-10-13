@@ -4,8 +4,30 @@ title: Common Pool Resources
 theme: default
 class: lead
 paginate: true
-footer: Topics in experimental economics - CPR
+footer: "Topics in Experimental Economics - CPR - D. Dubois"
+style: |
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75em;
+    color: #777;
+    border-top: 1px solid #ddd;
+    position: absolute;
+    bottom: 0.4em;
+  }
+
+  section::after {
+    content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+    position: absolute;
+    right: 1.2em;
+    bottom: 0.4em;
+    font-size: 0.75em;
+    color: #777;
+  }
+
 ---
+<!-- _footer: "" -->
 
 # Common Pool Resources
 
