@@ -56,7 +56,6 @@ output-file: index.html
 
   - [The Intergenerational Goods Game (IGG)](#the-intergenerational-goods-game-igg)
   - [Intragenerational vs. intergenerational social dilemma](#intragenerational-conflict-undermines-cooperation-with-the-future)
-  - [Framing the future for sustainability](#legacy-or-lineage-framing-the-future-for-sustainability)
 :::
 
 ::: {.column width="50%"}
@@ -128,9 +127,9 @@ Behavioral and experimental economists have also made contributions and found me
 
 
 <!---------------------------------------------------------------------------->
-# Static Common Pool Resource
+# Static Common Pool Resource {#static-common-pool-resource}
 
-## The Game (1/2)
+## The Game (1/2) {#the-game}
 
 *Walker, Herr, Gardner & Ostrom (2000)*
 
@@ -627,7 +626,7 @@ In discrete time, extractions are made at specific intervals and the resource ev
 
 ---
 
-## Continuous vs. discrete time
+## Continuous vs. discrete time {#continuous-vs-discrete-time}
 
 Djiguemde, M., Dubois, D., Sauquet, A. & Tidball, M., 2022. "[Continuous Versus Discrete Time in Dynamic Common Pool Resource Game Experiments](https://doi.org/10.1007/s10640-022-00700-2)". *Environmental and Resource Economics* 82, pp. 985-1014.
 
@@ -979,7 +978,7 @@ The first minute of play determines the evolution of the resource for the entire
 
 ---
 
-## The Intergenerational Goods Game - IGG
+## The Intergenerational Goods Game - IGG {#the-intergenerational-goods-game-igg}
 
 *Hauser, Rand, Peysakhovich, Nowak (2014, Nature)*
 
@@ -1437,7 +1436,7 @@ Compared to Patch A x $A_h$ (ref.):
 
 ---
 
-## A. Dynamic CPR - Maximization Problems
+## A. Dynamic CPR - Maximization Problems {#a-dynamic-cpr---maximization-problems}
 
 Two agents $i$ and $j$ exploit a renewable resource $H(t)$ (e.g., groundwater).  
 Each player’s instantaneous profit is:
@@ -1568,7 +1567,7 @@ $$
 
 ---
 
-## B. The exponential function in discounting?
+## B. The exponential function in discounting? {#b-the-exponential-function-in-discounting}
 
 The exponential function $e^{-\rho t}$ is used in continuous-time discounting because it has key mathematical and economic properties:
 
